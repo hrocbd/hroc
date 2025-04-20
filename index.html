@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>HROC - Hotel & Resort Owners Council</title>
     <link rel="stylesheet" href="css/style.css" />
-    <!-- Future logo icon -->
-    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="icon" href="your-logo.png" type="image/png">
 </head>
 <body>
-    <header>
-        <h1>Hotel & Resort Owners Council (HROC)</h1>
-    </header>
-
     <!-- Banner Section -->
     <section id="banner-slider">
-        <img id="banner" src="https://github.com/hrocbd/hroc/blob/main/Banner1.jpg?raw=true" alt="Banner">
+        <img src="https://raw.githubusercontent.com/hrocbd/hroc/main/Banner1.jpg" class="banner" alt="Banner 1">
+        <img src="https://raw.githubusercontent.com/hrocbd/hroc/main/Banner2.jpg" class="banner hidden" alt="Banner 2">
     </section>
 
+    <!-- Blue Header -->
+    <div class="blue-heading">
+        <h1>Hotel & Resort Owners Council (HROC)</h1>
+    </div>
+
+    <!-- Navigation -->
     <nav>
         <a href="#">Home</a>
         <a href="#about">About</a>
@@ -26,16 +28,19 @@
         <a href="#contact">Contact</a>
     </nav>
 
+    <!-- Hero Section -->
     <section id="hero">
         <h2>Welcome to HROC</h2>
         <p>Uniting Hotel & Resort Owners for a Better Tomorrow</p>
     </section>
 
+    <!-- About Section -->
     <section id="about">
         <h2>About Us</h2>
         <p>The Hotel & Resort Owners Council (HROC) is a collective initiative to unify and empower owners across the country. Our goal is to ensure industry standards, cooperation, and support.</p>
     </section>
 
+    <!-- Members Section -->
     <section id="members">
         <h2>Our Members</h2>
         <ul>
@@ -45,13 +50,13 @@
         </ul>
     </section>
 
+    <!-- Gallery Section -->
     <section id="gallery">
         <h2>Gallery</h2>
-        <div class="gallery-images">
-            <img src="https://github.com/hrocbd/hroc/blob/main/resort%20hd%20photo.jpg?raw=true" alt="Resort Image">
-        </div>
+        <img src="https://raw.githubusercontent.com/hrocbd/hroc/main/resort%20hd%20photo.jpg" class="gallery-img" alt="Resort HD Photo">
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
         <p>Email: contact@hroc.org</p>
@@ -64,20 +69,12 @@
     </footer>
 
     <script>
-        // Banner slider
-        const banners = [
-            "https://github.com/hrocbd/hroc/blob/main/Banner1.jpg?raw=true",
-            "https://github.com/hrocbd/hroc/blob/main/Banner2.jpg?raw=true"
-        ];
-        let index = 0;
+        const banners = document.querySelectorAll('.banner');
+        let current = 0;
         setInterval(() => {
-            index = (index + 1) % banners.length;
-            const banner = document.getElementById("banner");
-            banner.style.opacity = 0;
-            setTimeout(() => {
-                banner.src = banners[index];
-                banner.style.opacity = 1;
-            }, 500);
+            banners[current].classList.add('hidden');
+            current = (current + 1) % banners.length;
+            banners[current].classList.remove('hidden');
         }, 5000);
     </script>
 </body>
