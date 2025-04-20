@@ -6,32 +6,26 @@
     <title>HROC - Hotel & Resort Owners Council</title>
     <link rel="stylesheet" href="css/style.css" />
     <style>
-        /* Define the bounce effect */
-        .bounce-image {
-            transition: transform 0.3s ease-in-out;
+        /* Image with shadow effect and bounce effect */
+        .shadow-image {
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Horizontal, Vertical, Blur, Shadow color */
+            transition: box-shadow 0.3s ease-in-out;
+            animation: bounce 2s infinite; /* Bounce effect */
         }
 
-        .bounce-image:hover {
-            animation: bounce 0.5s ease infinite;
+        /* Optionally, add a hover effect for more emphasis */
+        .shadow-image:hover {
+            box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+            animation: bounce 1s ease-in-out; /* Faster bounce on hover */
         }
 
-        /* Keyframes for bounce effect */
+        /* Bounce effect keyframes */
         @keyframes bounce {
-            0% {
-                transform: translateY(0);
-            }
-            30% {
-                transform: translateY(-10px);
-            }
-            50% {
-                transform: translateY(0);
-            }
-            70% {
-                transform: translateY(-5px);
-            }
-            100% {
-                transform: translateY(0);
-            }
+            0% { transform: translateY(0); }
+            25% { transform: translateY(-10px); }
+            50% { transform: translateY(0); }
+            75% { transform: translateY(-5px); }
+            100% { transform: translateY(0); }
         }
     </style>
 </head>
@@ -68,9 +62,8 @@
 
     <section id="gallery">
         <h2>Gallery</h2>
-        <div class="gallery">
-            <img src="https://github.com/hrocbd/hroc/raw/main/resort%20hd%20photo.jpg" alt="Resort HD Photo" class="bounce-image" style="width:300px; height:168px; border-radius:10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-        </div>
+        <!-- Image with shadow effect and bounce -->
+        <img src="https://github.com/hrocbd/hroc/blob/main/resort%20hd%20photo.jpg" alt="Resort HD Photo" class="shadow-image" />
     </section>
 
     <section id="contact">
