@@ -5,27 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>HROC - Hotel & Resort Owners Council</title>
     <link rel="stylesheet" href="css/style.css" />
+    <!-- Favicon Icon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <style>
-        /* Image with shadow effect and bounce effect */
-        .shadow-image {
-            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Horizontal, Vertical, Blur, Shadow color */
-            transition: box-shadow 0.3s ease-in-out;
-            animation: bounce 2s infinite; /* Bounce effect */
+        /* Banner Image Animation */
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
         }
 
-        /* Optionally, add a hover effect for more emphasis */
-        .shadow-image:hover {
-            box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
-            animation: bounce 1s ease-in-out; /* Faster bounce on hover */
+        .banner img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            animation: bannerAnimation 10s infinite alternate;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* Bounce effect keyframes */
-        @keyframes bounce {
-            0% { transform: translateY(0); }
-            25% { transform: translateY(-10px); }
-            50% { transform: translateY(0); }
-            75% { transform: translateY(-5px); }
-            100% { transform: translateY(0); }
+        /* Banner animation effect */
+        @keyframes bannerAnimation {
+            0% {
+                opacity: 0;
+                transform: scale(1) translateX(-100%);
+            }
+            25% {
+                opacity: 1;
+                transform: scale(1.05) translateX(0);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1) translateX(100%);
+            }
+            75% {
+                opacity: 1;
+                transform: scale(1.05) translateX(0);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(1) translateX(-100%);
+            }
+        }
+
+        /* Image shadow and bounce effect */
+        .banner img:hover {
+            transform: scale(1.1) bounce;
+        }
+        
+        /* Gallery Style */
+        .gallery-images {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .gallery-images img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-images img:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -41,9 +90,15 @@
         </nav>
     </header>
 
+    <!-- Hero Section with Banner -->
     <section id="hero">
         <h2>Welcome to HROC</h2>
         <p>Uniting Hotel & Resort Owners for a Better Tomorrow</p>
+        <!-- Banner Images -->
+        <div class="banner">
+            <img src="https://github.com/hrocbd/hroc/blob/main/Banner1.jpg?raw=true" alt="Banner 1" />
+            <img src="https://github.com/hrocbd/hroc/blob/main/Banner2.jpg?raw=true" alt="Banner 2" />
+        </div>
     </section>
 
     <section id="about">
@@ -54,27 +109,4 @@
     <section id="members">
         <h2>Our Members</h2>
         <ul>
-            <li>Mr. Karim Uddin - President</li>
-            <li>Ms. Farzana Akter - Vice President</li>
-            <li>Mr. Habib Hasan - General Secretary</li>
-        </ul>
-    </section>
-
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <!-- Image with shadow effect and bounce -->
-        <img src="https://github.com/hrocbd/hroc/blob/main/resort%20hd%20photo.jpg" alt="Resort HD Photo" class="shadow-image" />
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: contact@hroc.org</p>
-        <p>Phone: +880 1234 567 890</p>
-        <p>Address: Dhaka, Bangladesh</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Hotel & Resort Owners Council (HROC)</p>
-    </footer>
-</body>
-</html>
+            <li>Mr. Karim Uddin
