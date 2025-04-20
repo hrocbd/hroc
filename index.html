@@ -5,42 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>HROC - Hotel & Resort Owners Council</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" href="your-logo.png" type="image/png">
+    <style>
+        /* Image with shadow effect */
+        .shadow-image {
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* Horizontal, Vertical, Blur, Shadow color */
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        /* Optionally, add a hover effect for more emphasis */
+        .shadow-image:hover {
+            box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3); /* Larger shadow on hover */
+        }
+    </style>
 </head>
 <body>
-    <!-- Banner Section -->
-    <section id="banner-slider">
-        <img src="https://raw.githubusercontent.com/hrocbd/hroc/main/Banner1.jpg" class="banner" alt="Banner 1">
-        <img src="https://raw.githubusercontent.com/hrocbd/hroc/main/Banner2.jpg" class="banner hidden" alt="Banner 2">
-    </section>
-
-    <!-- Blue Header -->
-    <div class="blue-heading">
+    <header>
         <h1>Hotel & Resort Owners Council (HROC)</h1>
-    </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#members">Members</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#members">Members</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <!-- Hero Section -->
     <section id="hero">
         <h2>Welcome to HROC</h2>
         <p>Uniting Hotel & Resort Owners for a Better Tomorrow</p>
     </section>
 
-    <!-- About Section -->
     <section id="about">
         <h2>About Us</h2>
         <p>The Hotel & Resort Owners Council (HROC) is a collective initiative to unify and empower owners across the country. Our goal is to ensure industry standards, cooperation, and support.</p>
     </section>
 
-    <!-- Members Section -->
     <section id="members">
         <h2>Our Members</h2>
         <ul>
@@ -50,13 +49,12 @@
         </ul>
     </section>
 
-    <!-- Gallery Section -->
     <section id="gallery">
         <h2>Gallery</h2>
-        <img src="https://raw.githubusercontent.com/hrocbd/hroc/main/resort%20hd%20photo.jpg" class="gallery-img" alt="Resort HD Photo">
+        <!-- Image with shadow effect -->
+        <img src="https://github.com/hrocbd/hroc/blob/main/resort%20hd%20photo.jpg" alt="Resort HD Photo" class="shadow-image" />
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Us</h2>
         <p>Email: contact@hroc.org</p>
@@ -67,15 +65,5 @@
     <footer>
         <p>&copy; 2025 Hotel & Resort Owners Council (HROC)</p>
     </footer>
-
-    <script>
-        const banners = document.querySelectorAll('.banner');
-        let current = 0;
-        setInterval(() => {
-            banners[current].classList.add('hidden');
-            current = (current + 1) % banners.length;
-            banners[current].classList.remove('hidden');
-        }, 5000);
-    </script>
 </body>
 </html>
